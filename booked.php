@@ -28,6 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Failed to send confirmation email. Please try again later.";
     }
 } else {
+    ?>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="alert alert-success">
+								<div class = "text-center">Not a good request </div>
+							</div>
+						</div>
+					</div>
+				<?php
     echo "Invalid request.";
 }
 ?>

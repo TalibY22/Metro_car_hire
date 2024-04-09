@@ -1,3 +1,49 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    if (isset($_POST["tfa_code"])) {
+        $user_entered_code = $_POST["tfa_code"];
+        $stored_code = $_SESSION['tfa_code'];
+
+        if ($user_entered_code == $stored_code) {
+            
+            header('Location: dashboard.php');
+            
+        } else {
+            
+            echo "TFA code verification failed. Please try again.";
+            
+        }
+    } else {
+        echo "TFA code not entered.";
+    }
+}
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
